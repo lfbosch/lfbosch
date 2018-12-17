@@ -1,0 +1,40 @@
+,Experiment.Time,dice_number,report,RT,Honestly_Question1,Honestly_Question2,Honestly_Question3,Honestly_Question4,Honestly_Question5,Age,Gender,Gender_Clean,Education,Comprehension,Feedbacks,Researcher,Even,ReportEvenBinary,Dice_Combo,Truth,LiedForGain,Treatment
+1,11/16/2018 15:32,3,-1,21.865,6,8,4,2,0,21,Female,F,Less than a College Degree,1,Screen was cut off and could affect validity of the study. ,Brian,0,0,0 0,1,0,Baseline
+2,12/1/2018 13:16,3,1,6.617,5,5,9,3,0,31,Male,M,Graduate Degree (Masters or above),3,NA,Brian,0,1,0 1,0,1,Baseline
+3,11/17/2018 15:33,3,0,3.353,5,10,6,3,0,53,f,F,Graduate Degree (Masters or above),1,NA,Brian,0,1,0 1,0,1,Baseline
+4,12/1/2018 13:44,5,-1,9.338,6,9,10,0,0,19,female,F,Less than a College Degree,1,NA,Brian,0,0,0 0,1,0,Baseline
+5,11/17/2018 16:21,2,1,9.705,10,9,5,1,0,18,female,F,Less than a College Degree,3,n/a,Carter,1,1,1 1,1,0,Baseline
+6,11/16/2018 15:29,6,1,9.724,9,10,2,0,0,29,female,F,Graduate Degree (Masters or above),3,NA,Carter,1,1,1 1,1,0,Baseline
+7,11/30/2018 11:26,6,1,3.148,7,8,6,2,0,23,male,M,Graduate Degree (Masters or above),3,NA,Eve,1,1,1 1,1,0,Baseline
+8,11/30/2018 11:37,4,1,17.523,6,6,8,4,0,23,male,M,College Degree (Associates or Bachelor's,1,NA,Eve,1,1,1 1,1,0,Baseline
+9,11/29/2018 17:59,4,0,24.843,4,6,6,2,0,25,FALSE,NoneGiven,Graduate Degree (Masters or above),1,NA,Eve,1,1,1 1,1,0,Baseline
+10,11/16/2018 15:05,5,-1,9.644,0,7,7,4,0,24,Male,M,Less than a College Degree,1,NA,Eve,0,0,0 0,1,0,Baseline
+11,11/14/2018 14:32,4,1,7.31,8,10,10,2,0,21,male,M,Less than a College Degree,3,NA,Lukas,1,1,1 1,1,0,Baseline
+12,11/16/2018 14:06,6,1,9.734,8,10,7,2,0,18,female,F,Less than a College Degree,1,NA,Lukas,1,1,1 1,1,0,Baseline
+13,11/18/2018 10:25,4,1,3.875,8,7,6,0,0,21,female,F,Less than a College Degree,3,NA,Lukas,1,1,1 1,1,0,Baseline
+14,11/20/2018 17:27,2,1,4.556,4,10,4,0,0,20,female,F,Less than a College Degree,3,NA,Lukas,1,1,1 1,1,0,Baseline
+15,11/18/2018 11:58,1,-1,7.889,10,0,0,0,0,18,female,F,College Degree (Associates or Bachelor's,3,NA,Lukas,0,0,0 0,1,0,Baseline
+16,11/18/2018 12:14,5,-1,4.347,4,8,3,0,0,24,male,M,Less than a College Degree,3,NA,Lukas,0,0,0 0,1,0,Baseline
+17,11/16/2018 15:22,6,1,10.663,7,10,10,0,0,18,female,F,Less than a College Degree,3,NA,Lukas,1,1,1 1,1,0,Baseline
+18,11/24/2018 15:11,6,1,2.13,6,9,6,3,0,21,female,F,Less than a College Degree,3,NA,Lukas,1,1,1 1,1,0,Baseline
+19,11/24/2018 21:41,1,1,3.848,0,5,8,5,0,20,female,F,Less than a College Degree,3,NA,Lukas,0,1,0 1,0,1,Baseline
+20,11/14/2018 14:30,6,1,5.594,3,3,8,0,0,21,female,F,College Degree (Associates or Bachelor's,3,NA,Marie,1,1,1 1,1,0,Baseline
+21,11/16/2018 14:03,2,1,7.211,8,10,10,0,0,18,female,F,Less than a College Degree,3,NA,Marie,1,1,1 1,1,0,Baseline
+22,11/16/2018 15:01,1,1,44.167,5,6,7,3,0,19,female,F,Less than a College Degree,3,"if i knew that reporting a dishonest answer had any consequences for the study, or i knew why it was important for the experimenter to get accurate results, i would have reported honestly.",Marie,0,1,0 1,0,1,Baseline
+23,11/17/2018 15:32,5,-1,3.616,0,0,0,0,0,50,m,M,Less than a College Degree,3,NA,Marie,0,0,0 0,1,0,Baseline
+24,12/1/2018 13:27,4,1,8.83,5,8,8,0,0,21,male,M,Less than a College Degree,3,NA,Marie,1,1,1 1,1,0,Baseline
+25,12/1/2018 14:41,4,1,9.662,0,0,0,0,0,19,NA,NoneGiven,Less than a College Degree,3,NA,Marie,1,1,1 1,1,0,Baseline
+26,11/16/2018 14:07,2,1,3.869,10,8,6,4,0,17,Female,F,Less than a College Degree,3,NA,Michael,1,1,1 1,1,0,Baseline
+27,11/17/2018 15:47,3,-1,5.688,9,10,4,1,0,18,male/masculine,M,Less than a College Degree,3,"Interesting study, clearer instructions would be helpful for knowing what is the ""second phase""",Michael,0,0,0 0,1,0,Baseline
+28,11/25/2018 22:18,4,1,12.918,10,9,8,1,1,30,FALSE,NoneGiven,College Degree (Associates or Bachelor's,1,NA,Michael,1,1,1 1,1,0,Baseline
+29,11/16/2018 15:12,6,1,12.574,5,10,6,2,1,21,female,F,Less than a College Degree,3,NA,Michael,1,1,1 1,1,0,Baseline
+30,11/14/2018 14:34,4,1,6.231,0,0,0,0,0,NA,NA,NoneGiven,Less than a College Degree,3,NA,Michael,1,1,1 1,1,0,Baseline
+31,11/15/2018 11:56,2,1,6.886,8,10,10,0,0,47,f,F,Graduate Degree (Masters or above),3,NA,John,1,1,1 1,1,0,Baseline
+32,11/16/2018 14:03,2,1,12.812,8,10,0,0,0,20,Female,F,Less than a College Degree,3,NA,John,1,1,1 1,1,0,Baseline
+33,11/16/2018 16:21,3,-1,11.871,6,9,7,2,0,18,Female,F,Less than a College Degree,3,NA,John,0,0,0 0,1,0,Baseline
+34,11/23/2018 11:55,4,1,13.126,8,10,3,1,0,54,male,M,Less than a College Degree,3,task 2 difficult to interpret. Circle E only or both E and e?,John,1,1,1 1,1,0,Baseline
+35,11/23/2018 13:25,1,-1,11.209,10,1,1,1,1,57,female,F,College Degree (Associates or Bachelor's,1,NA,John,0,0,0 0,1,0,Baseline
+36,11/25/2018 12:28,5,-1,13.658,0,0,0,0,0,18,Female,F,College Degree (Associates or Bachelor's,1,Should be shorter,John,0,0,0 0,1,0,Baseline
+37,11/28/2018 14:12,2,1,8.428,0,0,0,0,0,21,male,M,College Degree (Associates or Bachelor's,1,NA,John,1,1,1 1,1,0,Baseline
+38,11/29/2018 15:09,3,-1,10.16,10,0,0,0,0,29,male,M,Graduate Degree (Masters or above),1,NA,John,0,0,0 0,1,0,Baseline
+39,11/30/2018 15:13,6,1,18.487,8,9,2,1,1,56,female,F,College Degree (Associates or Bachelor's,3,NA,John,1,1,1 1,1,0,Baseline

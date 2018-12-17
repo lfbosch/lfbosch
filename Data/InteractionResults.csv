@@ -1,0 +1,37 @@
+,Experiment.Time,dice_number,report,RT,Honestly_Question1,Honestly_Question2,Honestly_Question3,Honestly_Question4,Honestly_Question5,Age,Gender,Gender_Clean,Education,Comprehension1,Comprehension2,Cutting_Time,Feedbacks,Researcher,Even,ReportEvenBinary,Dice_Combo,Truth,LiedForGain,Treatment
+1,12/1/2018 13:01,2,1,10.012,5,10,2,1,0,20,Male,M,College Degree (Associates or Bachelor's,3,1,10,NA,Brian,1,1,1 1,1,0,Interaction
+2,12/1/2018 14:20,4,1,10.033,9,7,5,3,1,18,m,M,Less than a College Degree,1,1,10,im confused,Brian,1,1,1 1,1,0,Interaction
+3,11/17/2018 16:22,5,1,9.023,10,10,0,0,0,17,Female,F,Less than a College Degree,3,1,9,NA,Brian,0,1,0 1,0,1,Interaction
+4,11/17/2018 15:18,6,-1,10.023,5,10,5,0,0,49,female,F,Graduate Degree (Masters or above),3,1,10,NA,Carter,1,0,1 0,0,0,Interaction
+5,11/17/2018 16:08,1,-1,5.063,9,10,5,2,0,18,Female,F,Less than a College Degree,1,1,10,NA,Carter,0,0,0 0,1,0,Interaction
+6,11/16/2018 15:10,5,-1,8.032,0,6,8,6,0,17,Female,F,Less than a College Degree,3,1,9,NA,Carter,0,0,0 0,1,0,Interaction
+7,11/16/2018 14:06,2,-1,7.904,8,10,5,2,0,21,Male,M,College Degree (Associates or Bachelor's,3,1,10,"Not sure what was being tested, but because this text was about a technical subject I picked up on particular words that had e's preceded by vowels etc (eg: measure)",Eve,1,0,1 0,0,0,Interaction
+8,11/16/2018 15:25,4,1,6.319,9,10,6,0,0,20,male,M,Less than a College Degree,3,1,10,NA,Eve,1,1,1 1,1,0,Interaction
+9,11/18/2018 10:57,1,1,4.674,0,0,6,0,0,19,female,F,Less than a College Degree,3,1,9,NA,Lukas,0,1,0 1,0,1,Interaction
+10,11/20/2018 12:59,5,1,10.022,0,8,0,0,0,21,female,F,Less than a College Degree,3,1,10,NA,Lukas,0,1,0 1,0,1,Interaction
+11,11/20/2018 17:53,6,1,3.817,3,9,4,0,0,23,male,M,College Degree (Associates or Bachelor's,3,1,10,NA,Lukas,1,1,1 1,1,0,Interaction
+12,11/18/2018 11:00,6,1,4.675,1,5,2,0,0,21,male,M,Less than a College Degree,3,1,9,NA,Lukas,1,1,1 1,1,0,Interaction
+13,11/18/2018 11:16,4,1,2.186,10,0,0,0,0,20,male,M,Less than a College Degree,3,1,10,NA,Lukas,1,1,1 1,1,0,Interaction
+14,11/14/2018 14:59,6,1,5.408,10,10,5,0,0,18,Male,M,Less than a College Degree,3,1,9,NA,Lukas,1,1,1 1,1,0,Interaction
+15,11/16/2018 15:09,1,-1,7.582,10,9,5,2,0,22,female,F,College Degree (Associates or Bachelor's,1,1,9,NA,Lukas,0,0,0 0,1,0,Interaction
+16,11/24/2018 20:04,3,1,9.02,0,3,7,3,0,19,female,F,Less than a College Degree,3,1,9,NA,Lukas,0,1,0 1,0,1,Interaction
+17,11/24/2018 10:54,3,1,10.018,0,10,0,0,0,64,female,F,Graduate Degree (Masters or above),1,1,10,The questions were not fully exp;,Michael,0,1,0 1,0,1,Interaction
+18,11/17/2018 15:15,1,-1,5.824,8,10,5,3,0,18,male,M,Less than a College Degree,3,1,9,pen was dry!,Michael,0,0,0 0,1,0,Interaction
+19,11/25/2018 22:48,1,-1,4.551,8,10,5,0,0,25,female,F,Graduate Degree (Masters or above),3,1,9,NA,Michael,0,0,0 0,1,0,Interaction
+20,11/16/2018 15:00,4,1,2.931,3,8,5,1,0,21,Male,M,Less than a College Degree,3,1,9,NA,Michael,1,1,1 1,1,0,Interaction
+21,12/1/2018 13:34,1,-1,2.796,8,3,2,0,0,20,Male,M,Less than a College Degree,1,1,9,NA,Michael,0,0,0 0,1,0,Interaction
+22,11/15/2018 15:46,3,-1,8.337,10,0,0,0,0,45,m,M,College Degree (Associates or Bachelor's,1,1,10,NA,John,0,0,0 0,1,0,Interaction
+23,11/16/2018 15:12,1,-1,10.029,7,8,8,3,0,25,female,F,Graduate Degree (Masters or above),3,1,10,have you considered or estimated the cost of this experiment?,John,0,0,0 0,1,0,Interaction
+24,11/16/2018 15:30,3,-1,5.199,8,9,4,6,7,19,Male,M,Less than a College Degree,1,1,10,NA,John,0,0,0 0,1,0,Interaction
+25,11/21/2018 11:45,2,1,7.489,9,10,9,2,0,53,FALSE,NoneGiven,College Degree (Associates or Bachelor's,3,1,9,I'd like to know the results of this experiment.,John,1,1,1 1,1,0,Interaction
+26,11/23/2018 12:39,4,1,9.03,7,10,5,0,0,40,Female,F,Less than a College Degree,1,1,9,NA,John,1,1,1 1,1,0,Interaction
+27,11/27/2018 10:15,1,1,10.027,10,8,4,1,0,27,Male,M,Graduate Degree (Masters or above),3,1,10,NA,John,0,1,0 1,0,1,Interaction
+28,11/26/2018 17:02,6,1,4.75,7,10,7,1,0,55,male,M,Graduate Degree (Masters or above),1,1,9,NA,John,1,1,1 1,1,0,Interaction
+29,11/28/2018 14:46,5,-1,8.301,9,10,9,1,1,46,f,F,College Degree (Associates or Bachelor's,1,1,9,I had to re-read the instructions a few times.,John,0,0,0 0,1,0,Interaction
+30,11/30/2018 14:49,4,1,8.562,10,8,5,3,1,43,Male,M,College Degree (Associates or Bachelor's,3,2,10,NA,John,1,1,1 1,1,0,Interaction
+31,11/16/2018 14:43,1,-1,5.672,8,10,10,2,0,19,male,M,Less than a College Degree,1,1,10,NA,Marie,0,0,0 0,1,0,Interaction
+32,11/16/2018 16:20,3,1,9.027,0,0,0,0,0,22,male,M,Less than a College Degree,1,1,9,fun test kinda,Marie,0,1,0 1,0,1,Interaction
+33,11/17/2018 15:17,4,1,9.369,10,5,5,0,0,37,f,F,College Degree (Associates or Bachelor's,1,1,10,NA,Marie,1,1,1 1,1,0,Interaction
+34,11/17/2018 16:17,4,1,4.79,7,10,4,1,0,23,male,M,College Degree (Associates or Bachelor's,3,2,9,this was fun!!,Marie,1,1,1 1,1,0,Interaction
+35,12/1/2018 13:59,6,1,2.537,7,10,10,0,0,24,Male,M,College Degree (Associates or Bachelor's,3,1,10,NA,Marie,1,1,1 1,1,0,Interaction
+36,12/1/2018 14:16,3,-1,7.524,5,7,9,3,0,19,FALSE,NoneGiven,Less than a College Degree,3,1,10,NA,Marie,0,0,0 0,1,0,Interaction

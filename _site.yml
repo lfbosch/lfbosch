@@ -1,0 +1,9 @@
+name: "BDS522"
+output_dir: "."
+navbar:
+  title: "BDS522"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Final Project"
+      href: FinalProject.html

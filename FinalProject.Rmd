@@ -1,0 +1,286 @@
+---
+title: "Final Project"
+author: "Lukas Bosch"
+date: "December 3, 2018"
+output: html_document
+bibliography: Bibliography.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, echo=FALSE, warning=FALSE,fig.align="center")
+```
+
+```{r eval=FALSE, include=FALSE}
+#Package Installation
+install.packages("dplyr")
+install.packages("purrr")
+install.packages("tibble")
+install.packages("FSA")
+install.packages("pwr")
+install.packages("kableExtra")
+install.packages("scales")
+install.packages("knitr")
+install.packages("psych")
+install.packages("compareGroups")
+install.packages("tcltk2")
+install.packages("stargazer")
+install.packages("summarytools")
+```
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+#Package Load
+library(dplyr)
+library(purrr)
+library(tibble)
+library(FSA)
+library(pwr)
+library(kableExtra)
+library(scales)
+library(knitr)
+library(psych)
+library(compareGroups)
+library(stargazer)
+library(summarytools)
+library(readr)
+
+setwd("~/OneDrive/University/Penn/BDS 522/06-12-18 Final Project/Website_template/")
+#setwd("C:/Users/lfbosch/Desktop/Final Project/")
+
+#Data Prep
+Full_Raw <- read_csv("Data/Full.csv")
+Baseline_Raw <- read_csv("Data/BaselineResults.csv")
+Depletion_Raw <- read_csv("Data/DepletionResults.csv")
+MWR_Raw <- read_csv("Data/MWRResults.csv")
+Interaction_Raw <- read_csv("Data/InteractionResults.csv")
+
+Full <- select(Full_Raw, -"Experiment.Time", -"dice_number", -"report", -"Honestly_Question1", -"Honestly_Question2", -"Honestly_Question3", -"Honestly_Question4", -"Honestly_Question5", -"Gender", -"Comprehension1", -"Comprehension2", -"Feedbacks", -"Researcher",  -"ReportEvenBinary", -"Dice_Combo", -"LiedForLoss",-"LiedForGain")
+
+Baseline <- select(Baseline_Raw, -"Experiment.Time", -"dice_number", -"report", -"Honestly_Question1", -"Honestly_Question2", -"Honestly_Question3", -"Honestly_Question4", -"Honestly_Question5", -"Gender", -"Comprehension",  -"Feedbacks", -"Researcher",  -"ReportEvenBinary", -"Dice_Combo",-"LiedForGain")
+
+MWR <- select(MWR_Raw, -"Experiment.Time", -"dice_number", -"report", -"Honestly_Question1", -"Honestly_Question2", -"Honestly_Question3", -"Honestly_Question4", -"Honestly_Question5", -"Gender", -"Comprehension1", -"Comprehension2",  -"Feedbacks", -"Researcher",  -"ReportEvenBinary", -"Dice_Combo",-"LiedForGain")
+
+Depletion <- select(Depletion_Raw, -"Experiment.Time", -"dice_number", -"report", -"Honestly_Question1", -"Honestly_Question2", -"Honestly_Question3", -"Honestly_Question4", -"Honestly_Question5", -"Gender", -"Comprehension",  -"Feedbacks", -"Researcher",  -"ReportEvenBinary", -"Dice_Combo",-"LiedForGain")
+
+Interaction <- select(Interaction_Raw, -"Experiment.Time", -"dice_number", -"report", -"Honestly_Question1", -"Honestly_Question2", -"Honestly_Question3", -"Honestly_Question4", -"Honestly_Question5", -"Gender", -"Comprehension1", -"Comprehension2",  -"Feedbacks", -"Researcher",  -"ReportEvenBinary", -"Dice_Combo",-"LiedForGain")
+
+names(Full)[names(Full) == 'Truth'] <- 'Honest'
+names(Baseline)[names(Baseline) == 'Truth'] <- 'Honest'
+names(MWR)[names(MWR) == 'Truth'] <- 'Honest'
+names(Depletion)[names(Depletion) == 'Truth'] <- 'Honest'
+names(Interaction)[names(Interaction) == 'Truth'] <- 'Honest'
+
+```
+
+
+# BDS522 Final Project: Gender difference in the effect of Moral Wiggle Room and Depletion on Honesty
+
+## Introduction
+### Motivation
+Traditional economic theory would predict rational agents to behave dishonestly if it maximizes the agent's utility. Many experiments in psychology and experimental economics demonstrated that this prediction does not fully hold.  
+Studies such as @fischbacher2013 isolate internal reasons to behave honestly. Participants are asked to self-report the results of a die-roll they just performed. The experiment is fully anonymous and there is no way for the researcher to find out what number the participant actually rolled. Consequently, there are no reputational or strategic reasons for the participant to be honest. However, the study still finds robust levels of honest reporting.  
+Many theories have been developed which are intended to explain such, apparently irrational, behavior. A particularly popular theory is considering the role of a self-image. The idea is that human hold a specifc self-image and have some form of disutility from deviating from their self-image through actions. @shu2011, for example, hypothesise that such gap between one's action and self-image leads to a state of cognitive dissonance, which individuals try to avoid. In other words: if individuals think of themselves to be honest, they dislike seeing themselves being dishonest.  
+Another factor which is being studied as possibly relevant to honesty is the level of ego-depletion. The idea is that honest behavior requires self-control and self-control is a limited mental resource [@hagger2010ego]. Studies such as @mead2009 suggest that depletion reduces honestly, potentially through the mechanism of less self-conctrol due to 'mental exhaustion'. However, other research suggests that lying increases demand on cognitive resources [@suchotzki2017lying; @job2010ego; @greene2009patterns] and thus, ego-depletion should lead to less lying. @hagger2010ego suggest that such different outcomes might be due to different contexts.  
+Lastly, @ward1990gender find that gender is correlated with different levels of honesty and that further, there are different in the extent of 'excuse making' between genders.
+
+### Experiment
+
+In the context of the BDS501 Behavioral Economics & Psychology course at Penn, we conducted an experiment to shed light on the above mentioned factors and their possible interactions.  
+To capture intrinsic reasons to lie, we adapted @fischbacher2013's roll-a-die paradigm. Participants are asked to roll a digital die and are then asked to report whether they rolled an even or odd number. Reporting an even number yields a higher payoff. This setup is our baseline treatment.
+As our first treatmet we created a novel design to test the self-image hypothesis by adapting @dana2003's "Moral Wiggle Room Mechanism". After the participants rolled the die, they are informed that they will have a 10 second window to report the outcome, however, the computer will cut them off at a random point during this time. By default, the switch is on the opposite value of which they rolled. Consequently, if a participant rolled an odd number, she can simply dither and let herself get cut off by the computer and receive the higher payoff. This distances the action from herself, as it 'was the computer' who did the final reporting. In other words, it allows for an internal excuse that one was simply being cut off. However, the timer is programmed such that participant do have enough time to report honestly, if they intended to do so. Thus, this treatment should test whether, by using internal excuses, particpants increase their dishonesty as they can protect their self-image more easily.
+A second treatment group faces the baseline treatment but is asked to perform a depleting task beforehand (circling 'E's in a text according to changing rules).
+Thirdly, an interaction treatment features both the Moral Wiggle Room mechanism and the depleting task. This treatment should capture possible interactive effects between the use of moral wiggle room and ego-depletion. A real-life example of such situation would be a stressed and depleted manager who is asked to self-report financial results.
+
+We also collected information such as gender, which will allow for further analysis wether the effects above are different between genders. This is particularly relevant, given that @ward1990gender suggests that there are different levels of 'excuse making' and our Moral Wiggle Room device allows for a specific kind of 'internal excuse making'.  
+
+### Hypothesis
+
+Based on the literature review and the experimental design, we estblish the following four key hypothesis:
+
+$H_1$: Participants in the MWR condition will be less honest than participants in the baseline condition.
+
+$H_2$: Participants in the Depletion condition will be more honest than the participants in the baseline condition.
+
+$H_3$: Participants in the Interaction condition will be less honest than in any other condition.
+
+$H_{4a}$: Female participants will be more honest then male participants.  
+$H_{4b}$: The negative effect of the MWR and Interaction treatment on honesty will be larger for male than for male participants. 
+
+## Data and Methods
+
+The dataset contains 154 observations. The key variables for this analysis are whether a participant truthfully reported their outcome (*Honest*), which treatment the participant was selected into (*Treatment*) and several demographic variables, including gender (*Gender*). However, to use *Honest* as outcome variable, further analysis is needed:
+*Honesty* is a binary variable such that 1 = honestly reported and 0 = dishonestly reported. To use the proportion of honestly reported outcome to compare the effects of the treatments, we make the underlying assumption that the participants in all treatment groups had an equal chance of lying for their benefit. The following table reports the proportion of 'even' die rolls across the treatments:
+
+
+```{r, results = 'asis'}
+DistributionEven <- with(Full, 
+                   by(Even, Treatment, descr, 
+                      stats = c("mean", "sd")))
+view(DistributionEven, "pander", ctable.totals = TRUE,  style = "rmarkdown")
+```
+
+The descriptive statistics show that the proportion of 'Even' rolls differs across the treatment groups. The virtual die was randomize, thus, the results might simply be due to the relatively small sample sizes. However, this is problematic for the following analysis, as e.g. in the Baseline treatment, only `r 100-62`% of the participants had the possibility to lie to gain a higher payoff. In the Depletion treatment `r 100-38`% had this possibility. To control for this problem, I will subset the data and only use participants that rolled an odd number in the first place. This reduces the sample size drastically, but is needed to make an accurate analysis. All following analysis will be based on this corrected dataset.
+
+```{r include=FALSE}
+FullOdd <- Full[which(Full$Even==0),]
+MWROdd <- MWR[which(MWR$Even==0),]
+DepletionOdd <- Depletion[which(Depletion$Even==0),]
+BaselineOdd <- Baseline[which(Baseline$Even==0),]
+InteractionOdd <- Interaction[which(Interaction$Even==0),]
+
+attach(FullOdd)
+```
+
+The table below reports the descriptive statistics of the outcome variable *Honest*, broken down by treatment group. The barplot visualizes the level of honesty in each treatment.
+```{r echo=FALSE, results = 'asis'}
+DescriptivesHonesty <- with(FullOdd, 
+                   by(Honest, Treatment, descr, 
+                      stats = c("mean", "sd", "min", "med", "max")))
+view(DescriptivesHonesty, "pander", ctable.totals = TRUE,  style = "rmarkdown")
+```
+
+```{r}
+MeanHonest<- c(mean(BaselineOdd$Honest),mean(MWROdd$Honest),mean(DepletionOdd$Honest), mean(InteractionOdd$Honest))
+TreatmentNames <- c("Baseline", "MWR", "Depletion", "Interaction")
+barplot(MeanHonest, xlab="Treatment", ylab="Average Honesty", main="Average Honesty in Treatments", names.arg=TreatmentNames, ylim=c(0,1))
+```
+
+The analysis so far indicates that there are some directional differences between the treatments, with MWR having the lowest level of honesty. However, whether those differences are statistically significant will be discussed in the next section of this report.  
+
+The next table also includes the distributions of the demographic variables for the individual treatments.
+
+```{r echo=FALSE}
+desc1 <- compareGroups(Treatment ~ Honest + RT + Age + Education + Gender_Clean, data = Full, 
+    )
+desc1table<-createTable(desc1, show.n = TRUE, show.p.overall = FALSE, show.all = TRUE)
+export2md(desc1table)
+```
+
+We can see that the gender proportions differ across the treatment. Consequently, gender might not only be in interesting variable to look at because of possible gender differences in the reaction to the treatments, but it might also be a variable that needs to be controlled for (as it might introduce a bias if we compare e.g. Baseline with Interaction).
+
+
+```{r eval=FALSE, include=FALSE}
+desc2 <- compareGroups(Treatment ~ Honest + RT + Education, data = Full, 
+    )
+desc2F<-createTable(update(desc2, subset = Gender_Clean == "F"), show.p.overall = FALSE, show.all = TRUE)
+desc2M<-createTable(update(desc2, subset = Gender_Clean == "M"), show.p.overall = FALSE, show.all = TRUE)
+desc2FM<-cbind(Male = desc2M, Female = desc2F)
+export2md(desc2FM)
+```
+
+
+
+To test for wether participants under any of the treatment conditions have different levels of honesty and lying for gain, I will use pairwise proportion tests. The reason for this is the strong violation of normality due to the binary outcome variables. 
+Further, I will use a proprtion tests to analyse whether there is a significant difference between males and females in honesty and lying for gain overall. I will employ the same test for the difference in honesty and lying for gain among females between treatments with moral wiggle room (MWR and Interaction) and treatments withou (Baseline, Depletion).
+
+Lastly, I will use a logistic regression to control for possible gender and education confounders on the effect of the treatments on the honesty and lying for gain levels. The logistic regression is needed due to the binary outcome variable. 
+
+
+## Results
+
+###Pairwise tests
+
+####Testing $H_1$, whether participants in the MWR Treatment are more likely to be dishonest
+```{r include=FALSE}
+HonestBCount <- sum(BaselineOdd$Honest)
+HonestDCount <- sum(DepletionOdd$Honest)
+HonestMWRCount <- sum(MWROdd$Honest)
+HonestXCount <- sum(InteractionOdd$Honest)
+BaselineN <- nrow(BaselineOdd)
+MWRN <- nrow(MWROdd)
+DepletionN <- nrow(DepletionOdd)
+InteractionN <- nrow(InteractionOdd)
+```
+```{r echo=FALSE}
+#MWR vs. Baseline
+prop.test(c(HonestMWRCount,HonestBCount),c(MWRN,BaselineN),alternative = "two.sided")
+```
+  
+With a p-value=0.49, we reject the alternative hypothesis of a significant difference between in honest reporting between the Baseline and Depletion treatment in favor of the null hypothesis of no difference.  
+
+
+####Testing $H_2$, whether participants in the Depletion condition will be more honest than the participants in the baseline condition.
+```{r echo=FALSE}
+#Depletion vs. Baseline
+prop.test(c(HonestDCount, HonestBCount),c(DepletionN,BaselineN),alternative = "two.sided")
+```
+  
+With a p-value=1, we reject the alternative hypothesis of a significant difference between in honest reporting between the Baseline and Depletion treatment in favor of the null hypothesis of no difference.  
+
+####Testing $H_3$, whether participants in the Interaction condition will be less honest than in any other condition.
+```{r echo=FALSE, warning=FALSE}
+#Interaction vs. Baseline
+prop.test(c(HonestXCount,HonestBCount),c(InteractionN,BaselineN),alternative = "greater")
+#Interaction vs. MWR
+prop.test(c(HonestXCount,HonestMWRCount),c(InteractionN,MWRN),alternative = "two.sided")
+#Interaction vs. Depletion
+prop.test(c(HonestXCount,HonestDCount),c(InteractionN,DepletionN),alternative = "two.sided")
+```
+  
+As all p-values are far larger than any conventional significance levels, we reject the alternative hypothesis of honesty being larger in the Interaction treatment than in any other treatment in favor of the null hypothesis of no difference.
+
+
+###Logistic Regression
+
+The logistic regression is specified as follows:
+
+Model 1: $log(\frac{p_{honest}}{1-p_{honest}}) = \beta_0 + \beta_{1k} Treatment_k$  
+Model 2: $log(\frac{p_{honest}}{1-p_{honest}}) = \beta_0 + \beta_{1k} Treatment_k + \beta_2 Female$  
+Model 3: $log(\frac{p_{honest}}{1-p_{honest}}) = \beta_0 + \beta_{1k} Treatment_k + \beta_2 Female + \beta_{3k} Treatment_k*Female$  
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, results = 'asis', fig.align="center"}
+#FullOdd$Education <- factor( FullOdd$Education , ordered = FALSE )
+FullOdd$Gender_Clean <- factor( FullOdd$Gender_Clean , ordered = FALSE )
+FullOdd$Female <- ifelse(Gender_Clean == "F", 1, 0)
+
+attach(FullOdd)
+Model1<-glm(Honest~Treatment, family = "binomial")
+Model2<-glm(Honest~Treatment + Female, family = "binomial" )
+Model3<-glm(Honest~Treatment +Female+ Treatment*Female, family = "binomial" )
+#Model4<-glm(FullOdd$Honest~FullOdd$Treatment + relevel(FullOdd$Gender_Clean, ref = "M" ) + relevel(FullOdd$Education, ref = "Less than a College Degree" ))
+
+#stargazer(Model1, Model2, Model3, title="Regression Results", align=TRUE,order=c("TreatmentMWR", "TreatmentDepletion", "TreatmentInteraction", "Female"),covariate.labels=c("T1: MWR","T2: Depletion","T3: Interaction","Female", "Female*MWR", "Female*Depletion", "Female*Interaction"),dep.var.labels=c("Honest Reporting"), type="html")
+stargazer(Model1, Model2, Model3, title="Regression Results", align=TRUE, dep.var.labels=c("Honest Reporting"), type="html")
+  
+```
+
+  
+The first model specification only includes the individual treatments. As in the pairwise chi-squared tests, we do not find any significant effects. However, within the sample, the MWR treatment is associated with the lowest level of honesty. The logit esimate for the log of odds ratio between MWR participants and Baseline participants is -0.788, the odds ratio is `r exp(-0.788)`. In other words, the odds of being honest under MWR treatement is `r exp(-0.788)` times that under Baseline. As mentioned before, this difference is not a valid inference to the population as a whole, as the estimate of the coefficient is not significant.  
+The second model includes a control dummy variable for being female. This coefficient only estimates an overall difference in honesty between the genders over all treatments. It is estimated to be -0.452, meaning the odds of a female participant to be honest is, on average, `r exp(-0.452)` that of a male participant. This would indicate that female participants, on average across all treatments, were slightly less honest than men. However, also this coefficient is not significant. Consequently, we do not have reason to accept $H_{4a}$, that female participants are more honest then male participants.  
+Lastly, the third model includes interactions between the individual treatment groups and the female dummary variable. Those additional coefficient estimate the difference in the effect of a treatment on honesty between females and males. $H_{4b}$ states that the negative effect of the MWR and Interaction treatment on honesty will be larger for female than for male participants. However, the estimates suggest that the differences in the effects between females and males compare as follows: -1.273 (MWR) > -0.916 (Baseline) > -0.693 (Depletion) >  -0.511 (Interaction). In other words, there is no systematically larger negative effect for both the Interaction and MWR treatment. Furthermore, all interaction coefficients are insigficant. Thus, there is no evidence to support $H_{4b}$.
+It should also be noted, that the inclusion of gender control variables did not lead to any of the treatment coefficient becoming significant. However, it should also be noted, that adding this amount of control variables slices the, already small, sample into even smaller pieces. This reduces the power of the analysis even further and thus, all the results should be interpreted with caution.  
+
+
+
+## Conclusion
+
+While the analysis of the experimental results shows some trend for the MWR and Interaction treatment to be associated with lower levels of honesty, we cannot conclude on any differences between the treatments with confidence. None of the results are statistically significant. Consequently, we cannot reject any null hypothesis of no difference between treatments or gender. 
+However, this null-results should not be taken as proof of no difference in the population. The sample size was small and the further analysis reduces the power of the analysis even further. To make more confident inferences about the population, the experiment would have to be rerun with a bigger sample size.
+
+<!--
+## Appendix
+
+### Variable Overview
+Variable Name  | Description
+------------- | ------------- 
+dice_number    | Actual number rolled
+report|-1 if reported odd, 1 if reported even
+Even|Binary: 0 Odd reported, 1 Even reported
+Truth|Binary: 0 if reported dishonestly, 1 if reported honestly
+LiedForGain| Binary: 1 if lied to get higher payoff, 0 if not
+LiedForLoss|Binary: 1 if lied to get lower payoff, 0 if not
+RT|Response time to report
+Cutting_Time|How many seconds until computer cuts off
+CutOff|Binary: 1 if cut off by computer, 0 if not
+Age|The participants age
+Gender|Self-reported gender
+Gender_Clean | Categorical geneder F/M/NoneGiven
+Edcuation | Categorical: Less than College Degree/College Degree/Graduate Degree
+Comprehension|Response to comprehension question (3 or 1)
+-->
+
+
+## References
+
+
+
+

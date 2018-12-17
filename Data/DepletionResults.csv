@@ -1,0 +1,41 @@
+,Experiment.Time,dice_number,report,RT,Honestly_Question1,Honestly_Question2,Honestly_Question3,Honestly_Question4,Honestly_Question5,Age,Gender,Gender_Clean,Education,Comprehension,Feedbacks,Researcher,Even,ReportEvenBinary,Dice_Combo,Truth,LiedForGain,Treatment
+1,11/17/2018 15:52,2,1,21.785,3,4,3,1,0,42,male,M,Graduate Degree (Masters or above),1,NA,Brian,1,1,1 1,1,0,Depletion
+2,12/1/2018 14:05,1,0,4.083,8,9,7,1,0,18,Female,F,Less than a College Degree,3,NA,Brian,0,1,0 1,0,1,Depletion
+3,12/1/2018 14:54,2,1,3.61,5,7,4,4,1,20,Male,M,Less than a College Degree,3,NA,Brian,1,1,1 1,1,0,Depletion
+4,11/16/2018 14:26,2,1,7.082,9,9,8,3,1,19,Male,M,Less than a College Degree,1,NA,Carter,1,1,1 1,1,0,Depletion
+5,11/16/2018 14:44,3,-1,16.867,6,8,7,5,2,20,Female,F,College Degree (Associates or Bachelor's,3,NA,Eve,0,0,0 0,1,0,Depletion
+6,12/1/2018 13:00,3,-1,10.006,5,10,10,0,0,20,male,M,Less than a College Degree,3,NA,Eve,0,0,0 0,1,0,Depletion
+7,12/1/2018 13:16,5,-1,4.296,2,2,2,2,2,32,Male,M,College Degree (Associates or Bachelor's,3,NA,Eve,0,0,0 0,1,0,Depletion
+8,12/1/2018 13:34,1,1,12.487,3,9,7,1,0,18,Male,M,College Degree (Associates or Bachelor's,1,NA,Eve,0,1,0 1,0,1,Depletion
+9,12/1/2018 13:50,3,-1,4.661,8,9,10,3,1,20,Female,F,Less than a College Degree,1,NA,Eve,0,0,0 0,1,0,Depletion
+10,12/1/2018 14:05,2,1,7.436,5,10,4,0,0,18,female,F,Less than a College Degree,1,NA,Eve,1,1,1 1,1,0,Depletion
+11,12/1/2018 14:19,4,1,13.903,3,5,10,3,0,18,Male,M,Less than a College Degree,3,NA,Eve,1,1,1 1,1,0,Depletion
+12,11/18/2018 10:34,5,-1,5.91,0,10,0,0,0,20,female,F,Less than a College Degree,3,NA,Lukas,0,0,0 0,1,0,Depletion
+13,11/20/2018 17:42,4,1,2.775,4,7,4,2,1,22,male,M,College Degree (Associates or Bachelor's,3,NA,Lukas,1,1,1 1,1,0,Depletion
+14,11/18/2018 10:45,2,1,5.652,1,6,4,1,0,18,female,F,Less than a College Degree,3,NA,Lukas,1,1,1 1,1,0,Depletion
+15,11/16/2018 14:44,1,-1,6.837,7,8,3,1,0,19,Male,M,Less than a College Degree,3,NA,Lukas,0,0,0 0,1,0,Depletion
+16,11/14/2018 14:47,5,-1,9.076,8,10,4,5,0,18,Femine,F,Less than a College Degree,1,NA,Lukas,0,0,0 0,1,0,Depletion
+17,11/24/2018 19:37,1,-1,4.407,8,7,6,4,2,19,male,M,Less than a College Degree,3,NA,Lukas,0,0,0 0,1,0,Depletion
+18,11/14/2018 14:55,2,1,6.415,7,10,7,2,0,29,woman,F,Graduate Degree (Masters or above),3,NA,Marie,1,1,1 1,1,0,Depletion
+19,11/14/2018 15:07,3,1,18.049,8,8,6,3,1,18,male,M,Less than a College Degree,3,it's cold!,Marie,0,1,0 1,0,1,Depletion
+20,11/16/2018 14:30,5,1,8.846,7,8,9,3,1,19,FALSE,NoneGiven,Less than a College Degree,1,NA,Marie,0,1,0 1,0,1,Depletion
+21,11/16/2018 15:52,5,1,11.667,10,10,10,0,0,24,f,F,Graduate Degree (Masters or above),3,face valid ,Marie,0,1,0 1,0,1,Depletion
+22,11/17/2018 15:43,3,-1,6.921,7,9,2,0,1,18,Female,F,Less than a College Degree,3,NA,Marie,0,0,0 0,1,0,Depletion
+23,12/1/2018 13:42,1,-1,7.323,8,10,7,4,1,23,male,M,College Degree (Associates or Bachelor's,3,NA,Marie,0,0,0 0,1,0,Depletion
+24,11/16/2018 14:44,5,-1,7.011,9,10,5,3,0,20,female,F,College Degree (Associates or Bachelor's,3,NA,Michael,0,0,0 0,1,0,Depletion
+25,11/17/2018 15:35,3,-1,9.392,10,10,5,5,0,57,m,M,Graduate Degree (Masters or above),1,NA,Michael,0,0,0 0,1,0,Depletion
+26,11/24/2018 11:11,6,1,7.252,8,5,0,0,0,23,Male,M,College Degree (Associates or Bachelor's,3,NA,Michael,1,1,1 1,1,0,Depletion
+27,12/1/2018 13:01,5,-1,11.301,8,9,10,0,0,21,Male,M,College Degree (Associates or Bachelor's,3,NA,Michael,0,0,0 0,1,0,Depletion
+28,11/14/2018 15:05,5,1,5.685,8,10,3,2,1,23,Female,F,Graduate Degree (Masters or above),1,NA,Michael,0,1,0 1,0,1,Depletion
+29,12/1/2018 13:17,4,1,6.583,10,8,5,2,0,18,Male,M,Less than a College Degree,3,NA,Michael,1,1,1 1,1,0,Depletion
+30,11/15/2018 13:02,6,1,6.61,8,10,2,0,0,39,male,M,Graduate Degree (Masters or above),3,NA,John,1,1,1 1,1,0,Depletion
+31,11/16/2018 14:21,2,1,3.747,8,9,10,3,0,18,Female,F,Less than a College Degree,1,Not Applicable,John,1,1,1 1,1,0,Depletion
+32,11/21/2018 11:02,1,1,16.838,8,8,3,1,1,53,Male,M,Graduate Degree (Masters or above),1,NA,John,0,1,0 1,0,1,Depletion
+33,11/21/2018 12:17,1,-1,8.045,8,10,6,0,0,28,FALSE,NoneGiven,Graduate Degree (Masters or above),3,NA,John,0,0,0 0,1,0,Depletion
+34,11/21/2018 15:28,3,-1,13.918,10,10,6,0,0,45,FALSE,NoneGiven,Graduate Degree (Masters or above),1,NA,John,0,0,0 0,1,0,Depletion
+35,11/26/2018 11:00,6,1,11.444,8,10,8,2,0,44,Female,F,College Degree (Associates or Bachelor's,1,NA,John,1,1,1 1,1,0,Depletion
+36,11/27/2018 10:52,5,-1,9.773,0,0,0,0,0,NA,NA,NoneGiven,Less than a College Degree,1,NA,John,0,0,0 0,1,0,Depletion
+37,11/28/2018 11:20,1,-1,12.002,9,10,2,0,0,48,female,F,College Degree (Associates or Bachelor's,3,NA,John,0,0,0 0,1,0,Depletion
+38,11/28/2018 15:04,5,-1,5.959,0,8,5,0,1,44,female,F,College Degree (Associates or Bachelor's,1,I am mentally tired now,John,0,0,0 0,1,0,Depletion
+39,11/30/2018 14:23,2,1,7.207,10,0,0,0,0,46,Female,F,Less than a College Degree,3,NA,John,1,1,1 1,1,0,Depletion
+40,11/30/2018 15:53,6,1,8.185,8,10,5,1,0,40,Male,M,College Degree (Associates or Bachelor's,3,Interesting test. I believe the instructions changed during the second test.,John,1,1,1 1,1,0,Depletion

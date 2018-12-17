@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Lukas Bosch" />
+
+
+<title>Final Project</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">BDS522</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="FinalProject.html">Final Project</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Final Project</h1>
+<h4 class="author"><em>Lukas Bosch</em></h4>
+<h4 class="date"><em>December 3, 2018</em></h4>
+
+</div>
+
+
+<div id="bds522-final-project-gender-difference-in-the-effect-of-moral-wiggle-room-and-depletion-on-honesty" class="section level1">
+<h1>BDS522 Final Project: Gender difference in the effect of Moral Wiggle Room and Depletion on Honesty</h1>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<div id="motivation" class="section level3">
+<h3>Motivation</h3>
+<p>Traditional economic theory would predict rational agents to behave dishonestly if it maximizes the agent’s utility. Many experiments in psychology and experimental economics demonstrated that this prediction does not fully hold.<br />
+Studies such as <span class="citation">Fischbacher and Heusi (2013)</span> isolate internal reasons to behave honestly. Participants are asked to self-report the results of a die-roll they just performed. The experiment is fully anonymous and there is no way for the researcher to find out what number the participant actually rolled. Consequently, there are no reputational or strategic reasons for the participant to be honest. However, the study still finds robust levels of honest reporting.<br />
+Many theories have been developed which are intended to explain such, apparently irrational, behavior. A particularly popular theory is considering the role of a self-image. The idea is that human hold a specifc self-image and have some form of disutility from deviating from their self-image through actions. <span class="citation">Shu, Gino, and Bazerman (2011)</span>, for example, hypothesise that such gap between one’s action and self-image leads to a state of cognitive dissonance, which individuals try to avoid. In other words: if individuals think of themselves to be honest, they dislike seeing themselves being dishonest.<br />
+Another factor which is being studied as possibly relevant to honesty is the level of ego-depletion. The idea is that honest behavior requires self-control and self-control is a limited mental resource <span class="citation">(Hagger et al. 2010)</span>. Studies such as <span class="citation">Mead et al. (2009)</span> suggest that depletion reduces honestly, potentially through the mechanism of less self-conctrol due to ‘mental exhaustion’. However, other research suggests that lying increases demand on cognitive resources <span class="citation">(Suchotzki et al. 2017; Job, Dweck, and Walton 2010; Greene and Paxton 2009)</span> and thus, ego-depletion should lead to less lying. <span class="citation">Hagger et al. (2010)</span> suggest that such different outcomes might be due to different contexts.<br />
+Lastly, <span class="citation">Ward and Beck (1990)</span> find that gender is correlated with different levels of honesty and that further, there are different in the extent of ‘excuse making’ between genders.</p>
+</div>
+<div id="experiment" class="section level3">
+<h3>Experiment</h3>
+<p>In the context of the BDS501 Behavioral Economics &amp; Psychology course at Penn, we conducted an experiment to shed light on the above mentioned factors and their possible interactions.<br />
+To capture intrinsic reasons to lie, we adapted <span class="citation">Fischbacher and Heusi (2013)</span>‘s roll-a-die paradigm. Participants are asked to roll a digital die and are then asked to report whether they rolled an even or odd number. Reporting an even number yields a higher payoff. This setup is our baseline treatment. As our first treatmet we created a novel design to test the self-image hypothesis by adapting <span class="citation">Dana, Weber, and Kuang (2003)</span>’s “Moral Wiggle Room Mechanism”. After the participants rolled the die, they are informed that they will have a 10 second window to report the outcome, however, the computer will cut them off at a random point during this time. By default, the switch is on the opposite value of which they rolled. Consequently, if a participant rolled an odd number, she can simply dither and let herself get cut off by the computer and receive the higher payoff. This distances the action from herself, as it ’was the computer’ who did the final reporting. In other words, it allows for an internal excuse that one was simply being cut off. However, the timer is programmed such that participant do have enough time to report honestly, if they intended to do so. Thus, this treatment should test whether, by using internal excuses, particpants increase their dishonesty as they can protect their self-image more easily. A second treatment group faces the baseline treatment but is asked to perform a depleting task beforehand (circling ’E’s in a text according to changing rules). Thirdly, an interaction treatment features both the Moral Wiggle Room mechanism and the depleting task. This treatment should capture possible interactive effects between the use of moral wiggle room and ego-depletion. A real-life example of such situation would be a stressed and depleted manager who is asked to self-report financial results.</p>
+<p>We also collected information such as gender, which will allow for further analysis wether the effects above are different between genders. This is particularly relevant, given that <span class="citation">Ward and Beck (1990)</span> suggests that there are different levels of ‘excuse making’ and our Moral Wiggle Room device allows for a specific kind of ‘internal excuse making’.</p>
+</div>
+<div id="hypothesis" class="section level3">
+<h3>Hypothesis</h3>
+<p>Based on the literature review and the experimental design, we estblish the following four key hypothesis:</p>
+<p><span class="math inline">\(H_1\)</span>: Participants in the MWR condition will be less honest than participants in the baseline condition.</p>
+<p><span class="math inline">\(H_2\)</span>: Participants in the Depletion condition will be more honest than the participants in the baseline condition.</p>
+<p><span class="math inline">\(H_3\)</span>: Participants in the Interaction condition will be less honest than in any other condition.</p>
+<p><span class="math inline">\(H_{4a}\)</span>: Female participants will be more honest then male participants.<br />
+<span class="math inline">\(H_{4b}\)</span>: The negative effect of the MWR and Interaction treatment on honesty will be larger for male than for male participants.</p>
+</div>
+</div>
+<div id="data-and-methods" class="section level2">
+<h2>Data and Methods</h2>
+<p>The dataset contains 154 observations. The key variables for this analysis are whether a participant truthfully reported their outcome (<em>Honest</em>), which treatment the participant was selected into (<em>Treatment</em>) and several demographic variables, including gender (<em>Gender</em>). However, to use <em>Honest</em> as outcome variable, further analysis is needed: <em>Honesty</em> is a binary variable such that 1 = honestly reported and 0 = dishonestly reported. To use the proportion of honestly reported outcome to compare the effects of the treatments, we make the underlying assumption that the participants in all treatment groups had an equal chance of lying for their benefit. The following table reports the proportion of ‘even’ die rolls across the treatments:</p>
+<div id="descriptive-statistics" class="section level3">
+<h3>Descriptive Statistics</h3>
+<p><strong>Variable:</strong> Full$Even by Treatment</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right"> </th>
+<th align="right">Baseline</th>
+<th align="right">Depletion</th>
+<th align="right">Interaction</th>
+<th align="right">MWR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right"><strong>Mean</strong></td>
+<td align="right">0.62</td>
+<td align="right">0.38</td>
+<td align="right">0.47</td>
+<td align="right">0.54</td>
+</tr>
+<tr class="even">
+<td align="right"><strong>Std.Dev</strong></td>
+<td align="right">0.49</td>
+<td align="right">0.49</td>
+<td align="right">0.51</td>
+<td align="right">0.51</td>
+</tr>
+</tbody>
+</table>
+<p>The descriptive statistics show that the proportion of ‘Even’ rolls differs across the treatment groups. The virtual die was randomize, thus, the results might simply be due to the relatively small sample sizes. However, this is problematic for the following analysis, as e.g. in the Baseline treatment, only 38% of the participants had the possibility to lie to gain a higher payoff. In the Depletion treatment 62% had this possibility. To control for this problem, I will subset the data and only use participants that rolled an odd number in the first place. This reduces the sample size drastically, but is needed to make an accurate analysis. All following analysis will be based on this corrected dataset.</p>
+<p>The table below reports the descriptive statistics of the outcome variable <em>Honest</em>, broken down by treatment group. The barplot visualizes the level of honesty in each treatment. ### Descriptive Statistics<br />
+<strong>Variable:</strong> FullOdd$Honest by Treatment</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right"> </th>
+<th align="right">Baseline</th>
+<th align="right">Depletion</th>
+<th align="right">Interaction</th>
+<th align="right">MWR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right"><strong>Mean</strong></td>
+<td align="right">0.73</td>
+<td align="right">0.72</td>
+<td align="right">0.63</td>
+<td align="right">0.56</td>
+</tr>
+<tr class="even">
+<td align="right"><strong>Std.Dev</strong></td>
+<td align="right">0.46</td>
+<td align="right">0.46</td>
+<td align="right">0.50</td>
+<td align="right">0.51</td>
+</tr>
+<tr class="odd">
+<td align="right"><strong>Min</strong></td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="even">
+<td align="right"><strong>Median</strong></td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+</tr>
+<tr class="odd">
+<td align="right"><strong>Max</strong></td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+</tr>
+</tbody>
+</table>
+<p><img src="FinalProject_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>The analysis so far indicates that there are some directional differences between the treatments, with MWR having the lowest level of honesty. However, whether those differences are statistically significant will be discussed in the next section of this report.</p>
+<p>The next table also includes the distributions of the demographic variables for the individual treatments.</p>
+<table class="table table-striped table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Summary descriptives table by groups of `Treatment’
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+[ALL]
+</th>
+<th style="text-align:center;">
+Baseline
+</th>
+<th style="text-align:center;">
+Depletion
+</th>
+<th style="text-align:center;">
+Interaction
+</th>
+<th style="text-align:center;">
+MWR
+</th>
+<th style="text-align:center;">
+N
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-style: italic;border-bottom: 1px solid grey">
+</td>
+<td style="text-align:center;font-style: italic;border-bottom: 1px solid grey">
+N=154
+</td>
+<td style="text-align:center;font-style: italic;border-bottom: 1px solid grey">
+N=39
+</td>
+<td style="text-align:center;font-style: italic;border-bottom: 1px solid grey">
+N=40
+</td>
+<td style="text-align:center;font-style: italic;border-bottom: 1px solid grey">
+N=36
+</td>
+<td style="text-align:center;font-style: italic;border-bottom: 1px solid grey">
+N=39
+</td>
+<td style="text-align:center;font-style: italic;border-bottom: 1px solid grey">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Honest
+</td>
+<td style="text-align:center;">
+0.81 (0.39)
+</td>
+<td style="text-align:center;">
+0.90 (0.31)
+</td>
+<td style="text-align:center;">
+0.82 (0.38)
+</td>
+<td style="text-align:center;">
+0.75 (0.44)
+</td>
+<td style="text-align:center;">
+0.77 (0.43)
+</td>
+<td style="text-align:center;">
+154
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RT
+</td>
+<td style="text-align:center;">
+8.10 (4.93)
+</td>
+<td style="text-align:center;">
+10.2 (7.56)
+</td>
+<td style="text-align:center;">
+8.78 (4.32)
+</td>
+<td style="text-align:center;">
+6.96 (2.52)
+</td>
+<td style="text-align:center;">
+6.37 (2.51)
+</td>
+<td style="text-align:center;">
+154
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Age
+</td>
+<td style="text-align:center;">
+26.5 (11.6)
+</td>
+<td style="text-align:center;">
+26.3 (12.2)
+</td>
+<td style="text-align:center;">
+27.2 (11.8)
+</td>
+<td style="text-align:center;">
+27.4 (12.9)
+</td>
+<td style="text-align:center;">
+24.9 (9.66)
+</td>
+<td style="text-align:center;">
+151
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Education:
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+154
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+College Degree (Associates or Bachelor’s
+</td>
+<td style="text-align:center;">
+46 (29.9%)
+</td>
+<td style="text-align:center;">
+8 (20.5%)
+</td>
+<td style="text-align:center;">
+12 (30.0%)
+</td>
+<td style="text-align:center;">
+11 (30.6%)
+</td>
+<td style="text-align:center;">
+15 (38.5%)
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Graduate Degree (Masters or above)
+</td>
+<td style="text-align:center;">
+27 (17.5%)
+</td>
+<td style="text-align:center;">
+7 (17.9%)
+</td>
+<td style="text-align:center;">
+9 (22.5%)
+</td>
+<td style="text-align:center;">
+6 (16.7%)
+</td>
+<td style="text-align:center;">
+5 (12.8%)
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Less than a College Degree
+</td>
+<td style="text-align:center;">
+81 (52.6%)
+</td>
+<td style="text-align:center;">
+24 (61.5%)
+</td>
+<td style="text-align:center;">
+19 (47.5%)
+</td>
+<td style="text-align:center;">
+19 (52.8%)
+</td>
+<td style="text-align:center;">
+19 (48.7%)
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gender_Clean:
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+154
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+F
+</td>
+<td style="text-align:center;">
+68 (44.2%)
+</td>
+<td style="text-align:center;">
+23 (59.0%)
+</td>
+<td style="text-align:center;">
+17 (42.5%)
+</td>
+<td style="text-align:center;">
+14 (38.9%)
+</td>
+<td style="text-align:center;">
+14 (35.9%)
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+M
+</td>
+<td style="text-align:center;">
+73 (47.4%)
+</td>
+<td style="text-align:center;">
+12 (30.8%)
+</td>
+<td style="text-align:center;">
+19 (47.5%)
+</td>
+<td style="text-align:center;">
+20 (55.6%)
+</td>
+<td style="text-align:center;">
+22 (56.4%)
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+NoneGiven
+</td>
+<td style="text-align:center;">
+13 (8.44%)
+</td>
+<td style="text-align:center;">
+4 (10.3%)
+</td>
+<td style="text-align:center;">
+4 (10.0%)
+</td>
+<td style="text-align:center;">
+2 (5.56%)
+</td>
+<td style="text-align:center;">
+3 (7.69%)
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+</tbody>
+</table>
+<p>We can see that the gender proportions differ across the treatment. Consequently, gender might not only be in interesting variable to look at because of possible gender differences in the reaction to the treatments, but it might also be a variable that needs to be controlled for (as it might introduce a bias if we compare e.g. Baseline with Interaction).</p>
+<p>To test for wether participants under any of the treatment conditions have different levels of honesty and lying for gain, I will use pairwise proportion tests. The reason for this is the strong violation of normality due to the binary outcome variables. Further, I will use a proprtion tests to analyse whether there is a significant difference between males and females in honesty and lying for gain overall. I will employ the same test for the difference in honesty and lying for gain among females between treatments with moral wiggle room (MWR and Interaction) and treatments withou (Baseline, Depletion).</p>
+<p>Lastly, I will use a logistic regression to control for possible gender and education confounders on the effect of the treatments on the honesty and lying for gain levels. The logistic regression is needed due to the binary outcome variable.</p>
+</div>
+</div>
+<div id="results" class="section level2">
+<h2>Results</h2>
+<div id="pairwise-tests" class="section level3">
+<h3>Pairwise tests</h3>
+<div id="testing-h_1-whether-participants-in-the-mwr-treatment-are-more-likely-to-be-dishonest" class="section level4">
+<h4>Testing <span class="math inline">\(H_1\)</span>, whether participants in the MWR Treatment are more likely to be dishonest</h4>
+<pre><code>## 
+##  2-sample test for equality of proportions with continuity
+##  correction
+## 
+## data:  c(HonestMWRCount, HonestBCount) out of c(MWRN, BaselineN)
+## X-squared = 0.48125, df = 1, p-value = 0.4879
+## alternative hypothesis: two.sided
+## 95 percent confidence interval:
+##  -0.5594761  0.2039205
+## sample estimates:
+##    prop 1    prop 2 
+## 0.5555556 0.7333333</code></pre>
+<p>With a p-value=0.49, we reject the alternative hypothesis of a significant difference between in honest reporting between the Baseline and Depletion treatment in favor of the null hypothesis of no difference.</p>
+</div>
+<div id="testing-h_2-whether-participants-in-the-depletion-condition-will-be-more-honest-than-the-participants-in-the-baseline-condition." class="section level4">
+<h4>Testing <span class="math inline">\(H_2\)</span>, whether participants in the Depletion condition will be more honest than the participants in the baseline condition.</h4>
+<pre><code>## 
+##  2-sample test for equality of proportions with continuity
+##  correction
+## 
+## data:  c(HonestDCount, HonestBCount) out of c(DepletionN, BaselineN)
+## X-squared = 8.3749e-32, df = 1, p-value = 1
+## alternative hypothesis: two.sided
+## 95 percent confidence interval:
+##  -0.3113749  0.2847082
+## sample estimates:
+##    prop 1    prop 2 
+## 0.7200000 0.7333333</code></pre>
+<p>With a p-value=1, we reject the alternative hypothesis of a significant difference between in honest reporting between the Baseline and Depletion treatment in favor of the null hypothesis of no difference.</p>
+</div>
+<div id="testing-h_3-whether-participants-in-the-interaction-condition-will-be-less-honest-than-in-any-other-condition." class="section level4">
+<h4>Testing <span class="math inline">\(H_3\)</span>, whether participants in the Interaction condition will be less honest than in any other condition.</h4>
+<pre><code>## 
+##  2-sample test for equality of proportions with continuity
+##  correction
+## 
+## data:  c(HonestXCount, HonestBCount) out of c(InteractionN, BaselineN)
+## X-squared = 0.067901, df = 1, p-value = 0.6028
+## alternative hypothesis: greater
+## 95 percent confidence interval:
+##  -0.4229493  1.0000000
+## sample estimates:
+##    prop 1    prop 2 
+## 0.6315789 0.7333333</code></pre>
+<pre><code>## 
+##  2-sample test for equality of proportions with continuity
+##  correction
+## 
+## data:  c(HonestXCount, HonestMWRCount) out of c(InteractionN, MWRN)
+## X-squared = 0.018441, df = 1, p-value = 0.892
+## alternative hypothesis: two.sided
+## 95 percent confidence interval:
+##  -0.2938866  0.4459334
+## sample estimates:
+##    prop 1    prop 2 
+## 0.6315789 0.5555556</code></pre>
+<pre><code>## 
+##  2-sample test for equality of proportions with continuity
+##  correction
+## 
+## data:  c(HonestXCount, HonestDCount) out of c(InteractionN, DepletionN)
+## X-squared = 0.088221, df = 1, p-value = 0.7665
+## alternative hypothesis: two.sided
+## 95 percent confidence interval:
+##  -0.4140622  0.2372201
+## sample estimates:
+##    prop 1    prop 2 
+## 0.6315789 0.7200000</code></pre>
+<p>As all p-values are far larger than any conventional significance levels, we reject the alternative hypothesis of honesty being larger in the Interaction treatment than in any other treatment in favor of the null hypothesis of no difference.</p>
+</div>
+</div>
+<div id="logistic-regression" class="section level3">
+<h3>Logistic Regression</h3>
+<p>The logistic regression is specified as follows:</p>
+<p>Model 1: <span class="math inline">\(log(\frac{p_{honest}}{1-p_{honest}}) = \beta_0 + \beta_{1k} Treatment_k\)</span><br />
+Model 2: <span class="math inline">\(log(\frac{p_{honest}}{1-p_{honest}}) = \beta_0 + \beta_{1k} Treatment_k + \beta_2 Female\)</span><br />
+Model 3: <span class="math inline">\(log(\frac{p_{honest}}{1-p_{honest}}) = \beta_0 + \beta_{1k} Treatment_k + \beta_2 Female + \beta_{3k} Treatment_k*Female\)</span></p>
+<table style="text-align:center">
+<caption>
+<strong>Regression Results</strong>
+</caption>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="3">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="3">
+Honest Reporting
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+TreatmentDepletion
+</td>
+<td>
+-0.067
+</td>
+<td>
+-0.140
+</td>
+<td>
+-0.693
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.734)
+</td>
+<td>
+(0.742)
+</td>
+<td>
+(1.245)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+TreatmentInteraction
+</td>
+<td>
+-0.473
+</td>
+<td>
+-0.487
+</td>
+<td>
+-0.511
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.753)
+</td>
+<td>
+(0.757)
+</td>
+<td>
+(1.366)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+TreatmentMWR
+</td>
+<td>
+-0.788
+</td>
+<td>
+-0.919
+</td>
+<td>
+-1.273
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.752)
+</td>
+<td>
+(0.772)
+</td>
+<td>
+(1.242)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Female
+</td>
+<td>
+</td>
+<td>
+-0.452
+</td>
+<td>
+-0.916
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+(0.504)
+</td>
+<td>
+(1.304)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+TreatmentDepletion:Female
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+0.981
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+(1.584)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+TreatmentInteraction:Female
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+(1.653)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+TreatmentMWR:Female
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+0.580
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+(1.646)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+1.012<sup>*</sup>
+</td>
+<td>
+1.294<sup>*</sup>
+</td>
+<td>
+1.609
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.584)
+</td>
+<td>
+(0.672)
+</td>
+<td>
+(1.095)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+77
+</td>
+<td>
+77
+</td>
+<td>
+77
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Log Likelihood
+</td>
+<td>
+-48.392
+</td>
+<td>
+-47.986
+</td>
+<td>
+-47.640
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Akaike Inf. Crit.
+</td>
+<td>
+104.784
+</td>
+<td>
+105.973
+</td>
+<td>
+111.280
+</td>
+</tr>
+<tr>
+<td colspan="4" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="3" style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+<p>The first model specification only includes the individual treatments. As in the pairwise chi-squared tests, we do not find any significant effects. However, within the sample, the MWR treatment is associated with the lowest level of honesty. The logit esimate for the log of odds ratio between MWR participants and Baseline participants is -0.788, the odds ratio is 0.4547534. In other words, the odds of being honest under MWR treatement is 0.4547534 times that under Baseline. As mentioned before, this difference is not a valid inference to the population as a whole, as the estimate of the coefficient is not significant.<br />
+The second model includes a control dummy variable for being female. This coefficient only estimates an overall difference in honesty between the genders over all treatments. It is estimated to be -0.452, meaning the odds of a female participant to be honest is, on average, 0.6363542 that of a male participant. This would indicate that female participants, on average across all treatments, were slightly less honest than men. However, also this coefficient is not significant. Consequently, we do not have reason to accept <span class="math inline">\(H_{4a}\)</span>, that female participants are more honest then male participants.<br />
+Lastly, the third model includes interactions between the individual treatment groups and the female dummary variable. Those additional coefficient estimate the difference in the effect of a treatment on honesty between females and males. <span class="math inline">\(H_{4b}\)</span> states that the negative effect of the MWR and Interaction treatment on honesty will be larger for female than for male participants. However, the estimates suggest that the differences in the effects between females and males compare as follows: -1.273 (MWR) &gt; -0.916 (Baseline) &gt; -0.693 (Depletion) &gt; -0.511 (Interaction). In other words, there is no systematically larger negative effect for both the Interaction and MWR treatment. Furthermore, all interaction coefficients are insigficant. Thus, there is no evidence to support <span class="math inline">\(H_{4b}\)</span>. It should also be noted, that the inclusion of gender control variables did not lead to any of the treatment coefficient becoming significant. However, it should also be noted, that adding this amount of control variables slices the, already small, sample into even smaller pieces. This reduces the power of the analysis even further and thus, all the results should be interpreted with caution.</p>
+</div>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>While the analysis of the experimental results shows some trend for the MWR and Interaction treatment to be associated with lower levels of honesty, we cannot conclude on any differences between the treatments with confidence. None of the results are statistically significant. Consequently, we cannot reject any null hypothesis of no difference between treatments or gender. However, this null-results should not be taken as proof of no difference in the population. The sample size was small and the further analysis reduces the power of the analysis even further. To make more confident inferences about the population, the experiment would have to be rerun with a bigger sample size.</p>
+<!--
+## Appendix
+
+### Variable Overview
+Variable Name  | Description
+------------- | ------------- 
+dice_number    | Actual number rolled
+report|-1 if reported odd, 1 if reported even
+Even|Binary: 0 Odd reported, 1 Even reported
+Truth|Binary: 0 if reported dishonestly, 1 if reported honestly
+LiedForGain| Binary: 1 if lied to get higher payoff, 0 if not
+LiedForLoss|Binary: 1 if lied to get lower payoff, 0 if not
+RT|Response time to report
+Cutting_Time|How many seconds until computer cuts off
+CutOff|Binary: 1 if cut off by computer, 0 if not
+Age|The participants age
+Gender|Self-reported gender
+Gender_Clean | Categorical geneder F/M/NoneGiven
+Edcuation | Categorical: Less than College Degree/College Degree/Graduate Degree
+Comprehension|Response to comprehension question (3 or 1)
+-->
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references">
+<div id="ref-dana2003">
+<p>Dana, Jason D., Roberto A. Weber, and Jason Kuang. 2003. “Exploiting Moral Wriggle Room: Behavior Inconsistent with a Preference for Fair Outcomes.” <em>SSRN Electronic Journal</em>. doi:<a href="https://doi.org/10.2139/ssrn.400900">10.2139/ssrn.400900</a>.</p>
+</div>
+<div id="ref-fischbacher2013">
+<p>Fischbacher, Urs, and Franziska Heusi. 2013. “Lies in Disguise-an Experimental Study on Cheating: Lies in Disguise.” <em>Journal of the European Economic Association</em> 11 (3): 525–47. doi:<a href="https://doi.org/10.1111/jeea.12014">10.1111/jeea.12014</a>.</p>
+</div>
+<div id="ref-greene2009patterns">
+<p>Greene, Joshua D, and Joseph M Paxton. 2009. “Patterns of Neural Activity Associated with Honest and Dishonest Moral Decisions.” <em>Proceedings of the National Academy of Sciences</em> 106 (30). National Acad Sciences: 12506–11.</p>
+</div>
+<div id="ref-hagger2010ego">
+<p>Hagger, Martin S, Chantelle Wood, Chris Stiff, and Nikos LD Chatzisarantis. 2010. “Ego Depletion and the Strength Model of Self-Control: A Meta-Analysis.” <em>Psychological Bulletin</em> 136 (4). American Psychological Association: 495.</p>
+</div>
+<div id="ref-job2010ego">
+<p>Job, Veronika, Carol S Dweck, and Gregory M Walton. 2010. “Ego Depletion—Is It All in Your Head? Implicit Theories About Willpower Affect Self-Regulation.” <em>Psychological Science</em> 21 (11). Sage Publications Sage CA: Los Angeles, CA: 1686–93.</p>
+</div>
+<div id="ref-mead2009">
+<p>Mead, Nicole L, Roy F Baumeister, Francesca Gino, Maurice E Schweitzer, and Dan Ariely. 2009. “Too Tired to Tell the Truth: Self-Control Resource Depletion and Dishonesty.” <em>Journal of Experimental Social Psychology</em> 45 (3). Elsevier: 594–97.</p>
+</div>
+<div id="ref-shu2011">
+<p>Shu, Lisa L., Francesca Gino, and Max H. Bazerman. 2011. “Dishonest Deed, Clear Conscience: When Cheating Leads to Moral Disengagement and Motivated Forgetting.” <em>Personality and Social Psychology Bulletin</em> 37 (3): 330–49. doi:<a href="https://doi.org/10.1177/0146167211398138">10.1177/0146167211398138</a>.</p>
+</div>
+<div id="ref-suchotzki2017lying">
+<p>Suchotzki, Kristina, Bruno Verschuere, Bram Van Bockstaele, Gershon Ben-Shakhar, and Geert Crombez. 2017. “Lying Takes Time: A Meta-Analysis on Reaction Time Measures of Deception.” <em>Psychological Bulletin</em> 143 (4). American Psychological Association: 428.</p>
+</div>
+<div id="ref-ward1990gender">
+<p>Ward, David A, and Wendy L Beck. 1990. “Gender and Dishonesty.” <em>The Journal of Social Psychology</em> 130 (3). Taylor &amp; Francis: 333–39.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

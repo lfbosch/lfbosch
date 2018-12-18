@@ -1,5 +1,6 @@
 ---
-title: "My Website"
+title: "BDS522"
 ---
 
-Hello, Website!
+This is a website for the final project for BDS522 at the University of Pennsylvania.
+To read my final project, please select the menu item "Final Project"

@@ -1,7 +1,7 @@
 ---
 title: "Final Project"
-author: "Lukas Bosch"
-date: "December 3, 2018"
+#author: "Lukas Bosch"
+#date: "December 3, 2018"
 output: html_document
 bibliography: Bibliography.bib
 ---
@@ -72,7 +72,7 @@ names(Interaction)[names(Interaction) == 'Truth'] <- 'Honest'
 ```
 
 
-# BDS522 Final Project: Gender difference in the effect of Moral Wiggle Room and Depletion on Honesty
+# Gender difference in the effect of Moral Wiggle Room and Depletion on Honesty
 
 ## Introduction
 ### Motivation
@@ -92,7 +92,7 @@ Thirdly, an interaction treatment features both the Moral Wiggle Room mechanism 
 
 We also collected information such as gender, which will allow for further analysis wether the effects above are different between genders. This is particularly relevant, given that @ward1990gender suggests that there are different levels of 'excuse making' and our Moral Wiggle Room device allows for a specific kind of 'internal excuse making'.  
 
-### Hypothesis
+### Hypotheses
 
 Based on the literature review and the experimental design, we estblish the following four key hypothesis:
 
@@ -131,6 +131,7 @@ attach(FullOdd)
 ```
 
 The table below reports the descriptive statistics of the outcome variable *Honest*, broken down by treatment group. The barplot visualizes the level of honesty in each treatment.
+
 ```{r echo=FALSE, results = 'asis'}
 DescriptivesHonesty <- with(FullOdd, 
                    by(Honest, Treatment, descr, 

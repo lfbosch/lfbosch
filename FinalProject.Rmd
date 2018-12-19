@@ -150,8 +150,7 @@ The analysis so far indicates that there are some directional differences betwee
 The next table also includes the distributions of the demographic variables for the individual treatments.
 
 ```{r echo=FALSE}
-desc1 <- compareGroups(Treatment ~ Honest + RT + Age + Education + Gender_Clean, data = Full, 
-    )
+desc1 <- compareGroups(Treatment ~ Honest + RT + Age + Education + Gender_Clean, data = Full )
 desc1table<-createTable(desc1, show.n = TRUE, show.p.overall = FALSE, show.all = TRUE)
 export2md(desc1table)
 ```
@@ -171,7 +170,7 @@ export2md(desc2FM)
 
 
 To test for wether participants under any of the treatment conditions have different levels of honesty and lying for gain, I will use pairwise proportion tests. The reason for this is the strong violation of normality due to the binary outcome variables. I will use a two.sided test to use a more conservative estimate, as my hypotheses are only based on literature review. We might observe results with an unexpected direction.
-Further, I will use a logistic regression to control for possible gender and education confounders on the effect of the treatments on the honesty and lying for gain levels. The logistic regression is needed due to the binary outcome variable. 
+Further, I will use a logistic regression to control for possible gender and education confounders on the effect of the treatments on the honesty. The logistic regression is needed due to the binary outcome variable. By using individual interactions of gender and treatments, I will be able to analyse whether there is some interacting effect between gender and the individual treatments.
 
 
 ## Results
